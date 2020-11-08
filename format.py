@@ -117,12 +117,41 @@ class format(object):
                 print(dataline)
         fout.close()
 
+    def merge(self):
+        file_1 = "baidu1.json"
+        file_2 = "baidu2.json"
+        file_3 = "baidu3.json"
+        file_4 = "baidu4.json"
+        file_5 = "baidu5.json"
+        file_out = "baidu_out.json"
+        listdata = []
+        with open(file_1, 'r', encoding="utf8") as fin:
+            listdata = listdata + fin.readlines()
+        with open(file_2, 'r', encoding="utf8") as fin:
+            listdata = listdata + fin.readlines()
+        with open(file_3, 'r', encoding="utf8") as fin:
+            listdata = listdata + fin.readlines()
+        with open(file_4, 'r', encoding="utf8") as fin:
+            listdata = listdata + fin.readlines()
+        with open(file_5, 'r', encoding="utf8") as fin:
+            listdata = listdata + fin.readlines()
+        fout = open(file_out, "w", encoding="utf8")
+        for line in listdata:
+            fout.write(line)
+        fout.close()
+
+
+
+
+
+
+
 
 
 
 
 if __name__ == "__main__":
-    format().format_6()
+    format().merge()
 
 
 
